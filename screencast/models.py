@@ -5,8 +5,8 @@ from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
 class Subject(models.Model):
-    subject = models.CharField(_("Subject"), max_length=100)
-    date = models.DateField(_("Date"), default=timezone.now)
+    subject = models.CharField(_("Subject"), max_length=100, blank=True, null=True)
+    date = models.DateField(_("Date"), default=timezone.now, blank=True, null=True)
 
     class Meta:
         ordering = ['-date']
@@ -18,8 +18,8 @@ class Subject(models.Model):
 
 
 class Category(models.Model):
-    category = models.CharField(_("Category"), max_length=100)
-    date = models.DateField(_("Date"), default=timezone.now)
+    category = models.CharField(_("Category"), max_length=100, blank=True, null=True)
+    date = models.DateField(_("Date"), default=timezone.now, blank=True, null=True)
 
     class Meta:
         ordering = ['-date']
@@ -31,13 +31,13 @@ class Category(models.Model):
 
 
 class Screencast(models.Model):
-    title = models.CharField(_("Title"), max_length=300)
+    title = models.CharField(_("Title"), max_length=300, blank=True, null=True)
     description = models.TextField(_("Description"), blank=True, null=True)
     subjects = models.ManyToManyField(Subject)
     categories = models.ForeignKey(Category)
-    cover = models.ImageField(_("Cover"), upload_to='images%Y/%m/%d')
-    video = models.FileField(_("Video"), upload_to='videos%Y/%m/%d')
-    date = models.DateField(_("Date"), default=timezone.now)
+    cover = models.ImageField(_("Cover"), upload_to='images%Y/%m/%d', blank=True, null=True)
+    video = models.FileField(_("Video"), upload_to='videos%Y/%m/%d', blank=True, null=True)
+    date = models.DateField(_("Date"), default=timezone.now, blank=True, null=True)
     """docstring for Lesson"""
 
     class Meta:
