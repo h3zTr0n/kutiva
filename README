@@ -8,8 +8,6 @@ Local Development
 
 ### Development
 
-GovTrack.us runs on Ubuntu 16.04 or OS X. To simplify local development, we have a `Vagrantfile` in this directory. You can get started quickly simply by installing [Vagrant](https://www.vagrantup.com/) and running:
-
     # Get this repo (you must clone with `--recursive`)
     git clone --recursive https://github.com/h3zTr0n/kutiva.git
 
