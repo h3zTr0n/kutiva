@@ -1,17 +1,42 @@
-Author:Jose Machava <jose.s.machava@gmail.com> add your name here
-Author URI: http://josemachava.com
-Company:Xindir LDA
-Company URI:http://xindiri.com
-Description:Xindiri inc
-Copyrigth:2017 (c)
+Kutiva eLearning platform
+=========================
 
-This is kutiva elearning platform for students 
-How to run this project
-kutiva usei django you shoul be familiar working with django.
-Instructions
-1 install python3.6 on your machine go http//:python.org
-2 install pip 
-3 go to project directory open cmd or terminal
-4 install virtualenv run pip install virtualenv after install virtualenv run source venv/bin/activate
-5 run pip install -r requirements
-6 then run python3.6 manage.py runserver
+This is kutiva elearning platform for students.
+
+Local Development
+-----------------
+
+### Development
+
+GovTrack.us runs on Ubuntu 16.04 or OS X. To simplify local development, we have a `Vagrantfile` in this directory. You can get started quickly simply by installing [Vagrant](https://www.vagrantup.com/) and running:
+
+    # Get this repo (you must clone with `--recursive`)
+    git clone --recursive https://github.com/h3zTr0n/kutiva.git
+
+    # Change to this repo's directory.
+    cd kutiva
+
+    # install python3.6 on your machine go http//:python.org
+    # install pip
+    `sudo apt-get install python3.6-pip`
+    # In cmd or terminal install virtualenv run pip install virtualenv
+    # create vritualenv and activate into the invironment
+    `virtualenv venv --python=/usr/bin/python3.6`
+    # activate into the virtualenvironment
+    `source venv/bin/activate`
+    # run
+    `pip install -r requirements.txt`
+    # then to create migrations run
+    `manage.py makemigrations`
+    # run
+    `python manage.py migrate to create the db tables`
+
+    # Create your initial user.
+    python manage.py createsuperuser
+
+    # Start debug server.
+    python manage.py runserver
+
+    # Visit the website in your browser at http://127.0.0.1:8000
+
+    # Enjoy
